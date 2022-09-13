@@ -171,7 +171,7 @@ export default class QRSVG {
     const dot = new QRDot({ svg: this._element, type: options.dotsOptions.type });
 
     this._dotsClipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
-    this._dotsClipPath.setAttribute("id", `${this._svgPrefix}-clip-path-dot-color`);
+    this._dotsClipPath.setAttribute("id", `clip-path-dot-color-${this._svgPrefix}`);
     this._defs.appendChild(this._dotsClipPath);
 
     this._createColor({
@@ -182,7 +182,7 @@ export default class QRSVG {
       y: yBeginning,
       height: count * dotSize,
       width: count * dotSize,
-      name: "dot-color"
+      name: `dot-color-${this._svgPrefix}`
     });
 
     for (let i = 0; i < count; i++) {
